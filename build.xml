@@ -6,7 +6,7 @@
 
     <target name="compile">
         <mkdir dir="build/classes"/>
-        <javac srcdir="src" destdir="build/classes"/>
+        <javac srcdir="." destdir="build/classes"/>
     </target>
 
     <target name="jar">
@@ -18,7 +18,7 @@
         </jar>
     </target>
 
-    <target name="run">
+    <target name="run" depends="clean, compile,jar"> 
         <java jar="build/jar/HelloWorld.jar" fork="true"/>
     </target>
 
